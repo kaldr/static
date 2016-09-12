@@ -2,10 +2,10 @@
  * Angular Material Design
  * https://github.com/angular/material
  * @license MIT
- * v1.1.0
+ * v1.1.0-rc.5
  */
-goog.provide('ngmaterial.components.fabShared');
-goog.require('ngmaterial.core');
+goog.provide('ng.material.components.fabShared');
+goog.require('ng.material.core');
 (function() {
   'use strict';
 
@@ -52,7 +52,7 @@ goog.require('ngmaterial.core');
       resetActionIndex();
 
       // Add an animations waiting class so we know not to run
-      $element.addClass('md-animations-waiting');
+      $element.addClass('_md-animations-waiting');
     }
 
     function setupListeners() {
@@ -152,7 +152,7 @@ goog.require('ngmaterial.core');
         // Fire our animation
         $animate.addClass($element, '_md-animations-ready').then(function() {
           // Remove the waiting class
-          $element.removeClass('md-animations-waiting');
+          $element.removeClass('_md-animations-waiting');
         });
       }
 
@@ -323,6 +323,7 @@ goog.require('ngmaterial.core');
     .module('material.components.fabSpeedDial', [
       'material.core',
       'material.components.fabShared',
+      'material.components.fabTrigger',
       'material.components.fabActions'
     ])
 
@@ -428,7 +429,7 @@ goog.require('ngmaterial.core');
 
     function runAnimation(element) {
       // Don't run if we are still waiting and we are not ready
-      if (element.hasClass('md-animations-waiting') && !element.hasClass('_md-animations-ready')) {
+      if (element.hasClass('_md-animations-waiting') && !element.hasClass('_md-animations-ready')) {
         return;
       }
 
@@ -560,4 +561,4 @@ goog.require('ngmaterial.core');
   MdFabSpeedDialScaleAnimation.$inject = ["$timeout"];
 })();
 
-ngmaterial.components.fabShared = angular.module("material.components.fabShared");
+ng.material.components.fabShared = angular.module("material.components.fabShared");

@@ -2,10 +2,10 @@
  * Angular Material Design
  * https://github.com/angular/material
  * @license MIT
- * v1.1.0
+ * v1.1.0-rc.5
  */
-goog.provide('ngmaterial.components.swipe');
-goog.require('ngmaterial.core');
+goog.provide('ng.material.components.swipe');
+goog.require('ng.material.core');
 /**
  * @ngdoc module
  * @name material.components.swipe
@@ -103,4 +103,4 @@ function getDirective(name) {
 
 
 
-ngmaterial.components.swipe = angular.module("material.components.swipe");
+ng.material.components.swipe = angular.module("material.components.swipe");
